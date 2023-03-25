@@ -20,4 +20,6 @@ pool.connect(err => {
 
 process.on('beforeExit', () => pool.end());
 
+User.pool = pool;
+
 module.exports = { User, Phone };
