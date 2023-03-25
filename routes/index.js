@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const phonesRouter = require('./phonesRouter');
 const usersRouter = require('./usersRouter');
 
 const router = Router();
@@ -7,9 +8,7 @@ const router = Router();
 router.use('/users', usersRouter);
 
 // /api/phones
-router.get('/phones', (req, res) => {
-  res.status(200).send('OK');
-});
+router.use('/phones', phonesRouter);
 
 //endpoints
 // get /api/users?page=1&results=5 - admin
