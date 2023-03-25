@@ -7,7 +7,7 @@ module.exports.createUser = async (req, res, next) => {
     const createdUser = await User.create(body);
     res.status(201).send(createdUser);
   } catch (err) {
-    next(e);
+    next(err);
   }
 };
 
