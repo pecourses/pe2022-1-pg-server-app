@@ -7,7 +7,7 @@ Content-Type: application/json
     "firstName": "Test",
     "lastName":"Testovych",
     "email":"test@gmail.com",
-    "tel": "+380199999997"
+    "tel": "+380199999996"
 }
 
 ### Creating invalid user with ununique tel - 500 
@@ -34,6 +34,10 @@ DELETE  http://localhost:5000/api/users/5 HTTP/1.1
 
 DELETE  http://localhost:5000/api/users/1 HTTP/1.1
 
-### Get all users
+### Get all users - 200
 
-GET http://localhost:5000/api/users HTTP/1.1
+GET http://localhost:5000/api/users?page=1&results=10 HTTP/1.1
+
+### Get all users without results - 200
+
+GET http://localhost:5000/api/users?page=1 HTTP/1.1

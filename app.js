@@ -13,6 +13,17 @@ app.get('/test/:testId/users/:userId', (req, res) => {
   res.send();
 });
 
+// app.get(
+//   '/',
+//   (req, res, next) => {
+//     req.token = {};
+//     next();
+//   },
+//   (req, res) => {
+//     res.send();
+//   }
+// );
+
 app.use('/api', router);
 
 app.use(errorHandlers.errorHandler);
