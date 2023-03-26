@@ -17,7 +17,19 @@ class User {
       throw new Error(err.detail);
     }
   }
-  static getAll () {}
+  static async getAll () {
+    const selectQuery = `
+     SELECT *
+     FROM users
+     ORDER BY id;
+   `;
+    try {
+      const foundUsers = await User.pool.query(selectQuery);
+      return foundUsers.rows;
+    } catch (err) {
+      throw new Error(err.detail);
+    }
+  }
   static getById () {}
   static updateById () {}
   static async deleteById (id) {

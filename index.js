@@ -15,3 +15,6 @@ httpServer.listen(PORT, () =>
 // index - app - router - usersRouter - n*mw - controller - model;
 
 // delete /api/users/5
+
+// get /api/users/
+// 1 навысити обробник(и) на ендпойнт

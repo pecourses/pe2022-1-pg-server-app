@@ -3,12 +3,11 @@ const { usersController } = require('../controllers');
 
 // /api/users
 const usersRouter = Router();
-// onclick <-> HTTPMethod+route
 
 usersRouter
   .route('/')
   .post(usersController.createUser)
-  .get((req, res) => res.send('ok'));
+  .get(usersController.getUsers);
 
 // /api/users/1
 usersRouter
@@ -19,5 +18,7 @@ usersRouter
 
 module.exports = usersRouter;
 
+//-------------------------------------------
+// onclick <-> HTTPMethod+route
 // const listener = () => {};
 // button.addEventListener('click',listener)

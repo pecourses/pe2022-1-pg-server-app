@@ -11,6 +11,15 @@ module.exports.createUser = async (req, res, next) => {
   }
 };
 
+module.exports.getUsers = async (req, res, next) => {
+  try {
+    const foundUsers = await User.getAll();
+    res.status(200).send(foundUsers);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports.deleteUser = async (req, res, next) => {
   const { userId } = req.params;
 
