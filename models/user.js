@@ -20,7 +20,21 @@ class User {
   static getAll () {}
   static getById () {}
   static updateById () {}
-  static deleteById () {}
+  static async deleteById (id) {
+    const deleteQuery = `
+      DELETE FROM users
+      WHERE id = ${id}
+      RETURNING id;
+    `;
+
+    try {
+      const deletedUser = await User.pool.query(deleteQuery);
+
+      return deletedUser.rows[0];
+    } catch (err) {
+      throw new Error(err.detail);
+    }
+  }
 }
 
 module.exports = User;

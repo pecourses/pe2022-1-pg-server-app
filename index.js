@@ -10,3 +10,8 @@ const httpServer = http.createServer(app);
 httpServer.listen(PORT, () =>
   console.log(`Server is listening http://localhost:${PORT}`)
 );
+
+// post / api / users;
+// index - app - router - usersRouter - n*mw - controller - model;
+
+// delete /api/users/5
